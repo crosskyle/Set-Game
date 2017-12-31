@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct SetCard {
 
@@ -15,20 +16,20 @@ struct SetCard {
     var shading: Shading
     var color: Color
     
-    enum Number {
-        case one
-        case two
-        case three
+    enum Number: Int {
+        case one = 1
+        case two = 2
+        case three = 3
         
         static var all = [Number.one,.two,.three]
     }
     
     enum Symbol: String {
-        case triangle = "▲"
-        case square = "■"
-        case circle = "●"
+        case symbol1
+        case symbol2
+        case symbol3
         
-        static var all = [Symbol.triangle,.square,.circle]
+        static var all = [Symbol.symbol1,.symbol2,.symbol3]
     }
     
     enum Shading {
@@ -40,11 +41,11 @@ struct SetCard {
     }
     
     enum Color {
-        case red
-        case green
-        case purple
+        case color1
+        case color2
+        case color3
         
-        static var all = [Color.red,.green,.purple]
+        static var all = [Color.color1,.color2,.color3]
 
     }
 }
@@ -55,3 +56,10 @@ extension SetCard: CustomStringConvertible {
         return "\(number), \(symbol.rawValue), \(shading), \(color)"
     }
 }
+
+extension SetCard: Equatable {
+    static func ==(lhs: SetCard, rhs: SetCard) -> Bool {
+        return lhs == rhs
+    }
+}
+

@@ -32,6 +32,9 @@
                                                     <constraint firstAttribute="width" constant="70" id="I08-3o-dc6"/>
                                                     <constraint firstAttribute="height" constant="70" id="ooC-Lg-AS5"/>
                                                 </constraints>
+                                                <connections>
+                                                    <action selector="touchCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="s5P-wj-h1O"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sYV-6c-OdG">
                                                 <rect key="frame" x="78" y="0.0" width="70" height="70"/>
@@ -40,6 +43,9 @@
                                                     <constraint firstAttribute="width" constant="70" id="PaD-w0-WSh"/>
                                                     <constraint firstAttribute="height" constant="70" id="gty-3w-xch"/>
                                                 </constraints>
+                                                <connections>
+                                                    <action selector="touchCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dbU-AB-mMn"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qWq-Ee-ynO">
                                                 <rect key="frame" x="156" y="0.0" width="70" height="70"/>
@@ -48,6 +54,9 @@
                                                     <constraint firstAttribute="width" constant="70" id="0wF-Js-SpB"/>
                                                     <constraint firstAttribute="height" constant="70" id="wgi-40-uZf"/>
                                                 </constraints>
+                                                <connections>
+                                                    <action selector="touchCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pL0-un-yFj"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xWP-uC-gts">
                                                 <rect key="frame" x="234" y="0.0" width="70" height="70"/>
@@ -56,6 +65,9 @@
                                                     <constraint firstAttribute="height" constant="70" id="Aid-lS-QMe"/>
                                                     <constraint firstAttribute="width" constant="70" id="RQD-3w-Jon"/>
                                                 </constraints>
+                                                <connections>
+                                                    <action selector="touchCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LIq-98-bPN"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -69,6 +81,9 @@
                                                     <constraint firstAttribute="height" constant="70" id="Duj-0s-rtH"/>
                                                     <constraint firstAttribute="width" constant="70" id="T7w-uV-odG"/>
                                                 </constraints>
+                                                <connections>
+                                                    <action selector="touchCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rwL-Vd-rh6"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ncr-CD-yc4">
                                                 <rect key="frame" x="78" y="0.0" width="70" height="70"/>
@@ -77,6 +92,9 @@
                                                     <constraint firstAttribute="width" constant="70" id="B5V-ki-n5i"/>
                                                     <constraint firstAttribute="height" constant="70" id="jDp-Vw-ywR"/>
                                                 </constraints>
+                                                <connections>
+                                                    <action selector="touchCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MN4-TY-BPU"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YMZ-B3-7tV">
                                                 <rect key="frame" x="156" y="0.0" width="70" height="70"/>
@@ -85,6 +103,9 @@
                                                     <constraint firstAttribute="height" constant="70" id="Z86-xy-Q7W"/>
                                                     <constraint firstAttribute="width" constant="70" id="pXM-bb-JS3"/>
                                                 </constraints>
+                                                <connections>
+                                                    <action selector="touchCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="12V-d4-vTH"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ezn-Kr-91W">
                                                 <rect key="frame" x="234" y="0.0" width="70" height="70"/>
@@ -93,6 +114,9 @@
                                                     <constraint firstAttribute="width" constant="70" id="3j4-HY-uCJ"/>
                                                     <constraint firstAttribute="height" constant="70" id="BCm-5C-WHc"/>
                                                 </constraints>
+                                                <connections>
+                                                    <action selector="touchCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2TE-Ts-TY6"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -106,6 +130,9 @@
                                                     <constraint firstAttribute="height" constant="70" id="V0l-vN-Npu"/>
                                                     <constraint firstAttribute="width" constant="70" id="gzQ-Qn-HJJ"/>
                                                 </constraints>
+                                                <connections>
+                                                    <action selector="touchCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="E4H-Ts-uZv"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nSx-JO-1zX">
                                                 <rect key="frame" x="78" y="0.0" width="70" height="70"/>
@@ -114,6 +141,9 @@
                                                     <constraint firstAttribute="width" constant="70" id="FCQ-wl-ElS"/>
                                                     <constraint firstAttribute="height" constant="70" id="k2H-fY-ygK"/>
                                                 </constraints>
+                                                <connections>
+                                                    <action selector="touchCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qt1-hv-znU"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IzM-Aa-SP2">
                                                 <rect key="frame" x="156" y="0.0" width="70" height="70"/>
@@ -122,6 +152,9 @@
                                                     <constraint firstAttribute="height" constant="70" id="BgC-d7-bPb"/>
                                                     <constraint firstAttribute="width" constant="70" id="vBc-I2-9Q3"/>
                                                 </constraints>
+                                                <connections>
+                                                    <action selector="touchCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MeH-Gh-Uj9"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uag-iw-eHW">
                                                 <rect key="frame" x="234" y="0.0" width="70" height="70"/>
@@ -130,6 +163,9 @@
                                                     <constraint firstAttribute="height" constant="70" id="2zh-Rn-8KN"/>
                                                     <constraint firstAttribute="width" constant="70" id="aWF-rq-vya"/>
                                                 </constraints>
+                                                <connections>
+                                                    <action selector="touchCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Sv5-8a-9Yl"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -143,6 +179,9 @@
                                                     <constraint firstAttribute="height" constant="70" id="Khp-Ne-Zxe"/>
                                                     <constraint firstAttribute="width" constant="70" id="bhM-7a-bJv"/>
                                                 </constraints>
+                                                <connections>
+                                                    <action selector="touchCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="alx-Wy-hpR"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o0l-yy-gKq">
                                                 <rect key="frame" x="78" y="0.0" width="70" height="70"/>
@@ -151,6 +190,9 @@
                                                     <constraint firstAttribute="height" constant="70" id="6jJ-yb-hD9"/>
                                                     <constraint firstAttribute="width" constant="70" id="yB5-Ut-PTD"/>
                                                 </constraints>
+                                                <connections>
+                                                    <action selector="touchCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FYg-SM-Y3H"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oE6-Wb-dGj">
                                                 <rect key="frame" x="156" y="0.0" width="70" height="70"/>
@@ -159,6 +201,9 @@
                                                     <constraint firstAttribute="width" constant="70" id="NL6-ee-DhR"/>
                                                     <constraint firstAttribute="height" constant="70" id="vOU-fg-s8u"/>
                                                 </constraints>
+                                                <connections>
+                                                    <action selector="touchCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JGk-o3-nKK"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z3N-eN-Ger">
                                                 <rect key="frame" x="234" y="0.0" width="70" height="70"/>
@@ -167,6 +212,9 @@
                                                     <constraint firstAttribute="width" constant="70" id="Mtg-oW-ojU"/>
                                                     <constraint firstAttribute="height" constant="70" id="dfj-kF-DVb"/>
                                                 </constraints>
+                                                <connections>
+                                                    <action selector="touchCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="m2R-pU-F4j"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -180,6 +228,9 @@
                                                     <constraint firstAttribute="height" constant="70" id="TfR-Bq-lHh"/>
                                                     <constraint firstAttribute="width" constant="70" id="uUO-rv-67K"/>
                                                 </constraints>
+                                                <connections>
+                                                    <action selector="touchCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tlF-S6-G60"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vkl-6a-Cyo">
                                                 <rect key="frame" x="78" y="0.0" width="70" height="70"/>
@@ -188,6 +239,9 @@
                                                     <constraint firstAttribute="height" constant="70" id="hT7-JN-MdA"/>
                                                     <constraint firstAttribute="width" constant="70" id="oPB-Mb-QXP"/>
                                                 </constraints>
+                                                <connections>
+                                                    <action selector="touchCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iNo-7X-4Lp"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qnW-qu-b5v">
                                                 <rect key="frame" x="156" y="0.0" width="70" height="70"/>
@@ -196,6 +250,9 @@
                                                     <constraint firstAttribute="width" constant="70" id="6ch-rf-aXU"/>
                                                     <constraint firstAttribute="height" constant="70" id="8ll-wA-g37"/>
                                                 </constraints>
+                                                <connections>
+                                                    <action selector="touchCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eKq-zM-5nT"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fst-2m-u5f">
                                                 <rect key="frame" x="234" y="0.0" width="70" height="70"/>
@@ -204,6 +261,9 @@
                                                     <constraint firstAttribute="height" constant="70" id="1oe-yu-OJU"/>
                                                     <constraint firstAttribute="width" constant="70" id="5cX-bA-x3Y"/>
                                                 </constraints>
+                                                <connections>
+                                                    <action selector="touchCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ji8-qb-VTN"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -217,6 +277,9 @@
                                                     <constraint firstAttribute="height" constant="70" id="7kp-xw-dEy"/>
                                                     <constraint firstAttribute="width" constant="70" id="ikm-vX-Ga0"/>
                                                 </constraints>
+                                                <connections>
+                                                    <action selector="touchCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FDc-bq-4vr"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PoI-F7-90O">
                                                 <rect key="frame" x="78" y="0.0" width="70" height="70"/>
@@ -225,6 +288,9 @@
                                                     <constraint firstAttribute="height" constant="70" id="p2r-cV-JMC"/>
                                                     <constraint firstAttribute="width" constant="70" id="pYk-zY-HHw"/>
                                                 </constraints>
+                                                <connections>
+                                                    <action selector="touchCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="n1E-kr-VHv"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ZK-SO-1RA">
                                                 <rect key="frame" x="156" y="0.0" width="70" height="70"/>
@@ -233,6 +299,9 @@
                                                     <constraint firstAttribute="width" constant="70" id="3Sd-fr-h49"/>
                                                     <constraint firstAttribute="height" constant="70" id="w4e-hV-zRE"/>
                                                 </constraints>
+                                                <connections>
+                                                    <action selector="touchCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SuU-i0-4rk"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ji-gb-AhZ">
                                                 <rect key="frame" x="234" y="0.0" width="70" height="70"/>
@@ -241,6 +310,9 @@
                                                     <constraint firstAttribute="width" constant="70" id="2MF-6D-PxP"/>
                                                     <constraint firstAttribute="height" constant="70" id="WOu-M0-GEx"/>
                                                 </constraints>
+                                                <connections>
+                                                    <action selector="touchCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1DW-uW-mLF"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -249,6 +321,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S7P-HP-bhD">
                                 <rect key="frame" x="141" y="617" width="93" height="30"/>
                                 <state key="normal" title="Draw 3 Cards"/>
+                                <connections>
+                                    <action selector="touchDrawCardsButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CCD-fV-Du1"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -289,7 +364,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+            <point key="canvasLocation" x="-598" y="138"/>
         </scene>
     </scenes>
 </document>

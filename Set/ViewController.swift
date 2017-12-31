@@ -15,12 +15,20 @@ class ViewController: UIViewController {
     
     @IBOutlet var cardButtons: [UIButton]!
     
+    @IBAction func touchDrawCardsButton(_ sender: UIButton) {
+        game.drawThreeCards()
+        updateViewFromModel()
+    }
+    
+    @IBAction func touchCard(_ sender: UIButton) {
+        
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         updateViewFromModel()
-        
     }
     
     func updateViewFromModel() {
@@ -87,6 +95,7 @@ class ViewController: UIViewController {
             let attributedString = NSAttributedString(string: cardString,
                 attributes: attributes)
             
+            cardButtons[index].isHidden = false
             cardButtons[index].setAttributedTitle(attributedString, for: UIControlState.normal)
         }
         

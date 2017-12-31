@@ -22,4 +22,14 @@ class SetGame {
             }
         }
     }
+    
+    func drawThreeCards() {
+        if cardsShown.count <= 21 {
+            for _ in 1...3 {
+                if let card = deck.draw()  {
+                    cardsShown.append(card)
+                }
+            }
+        }
+    }
 }

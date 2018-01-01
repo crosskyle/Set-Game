@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    let game = SetGame()
+    private let game = SetGame()
     
     
     @IBOutlet var cardButtons: [UIButton]!
@@ -21,9 +21,19 @@ class ViewController: UIViewController {
     }
     
     @IBAction func touchCard(_ sender: UIButton) {
-        
+        if game.selectedCards.count < 3 {
+            sender.layer.borderWidth = 3.0
+            sender.layer.borderColor = UIColor.blue.cgColor
+            sender.layer.cornerRadius = 8.0
+            
+            if let cardNumber = cardButtons.index(of: sender) {
+                game.selectCard(at: cardNumber)
+                updateViewFromModel()
+            } else {
+                print("choosen card was not in cardButtons")
+            }
+        }
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -10,10 +10,11 @@ import Foundation
 
 
 class SetGame {
-    var deck = SetDeck()
+    private var deck = SetDeck()
     
-    var cardsShown = [SetCard]()
-    var cardsMatched = [SetCard]()
+    private(set) var cardsShown = [SetCard]()
+    private var cardsMatched = [SetCard]()
+    private(set) var selectedCards = [SetCard]()
     
     init() {
         for _ in 1...12 {
@@ -29,6 +30,17 @@ class SetGame {
                 if let card = deck.draw()  {
                     cardsShown.append(card)
                 }
+            }
+        }
+    }
+    
+    func selectCard(at index: Int) {
+        
+        if selectedCards.count < 3 {
+            selectedCards.append(cardsShown[index])
+            
+            if selectedCards.count == 3 {
+                
             }
         }
     }

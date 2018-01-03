@@ -319,23 +319,33 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S7P-HP-bhD">
-                                <rect key="frame" x="141" y="617" width="93" height="30"/>
+                                <rect key="frame" x="266" y="617" width="93" height="30"/>
                                 <state key="normal" title="Draw 3 Cards"/>
                                 <connections>
                                     <action selector="touchDrawCardsButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CCD-fV-Du1"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Score: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tig-q0-qDo">
+                                <rect key="frame" x="16" y="626" width="86" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="S7P-HP-bhD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="D5v-aF-E2F"/>
+                            <constraint firstItem="S7P-HP-bhD" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" symbolic="YES" id="IFF-OG-htt"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Tig-q0-qDo" secondAttribute="bottom" constant="20" id="QDS-Yo-gdU"/>
                             <constraint firstItem="925-Ov-IMZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="daa-vp-cO3"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="S7P-HP-bhD" secondAttribute="bottom" constant="20" id="kfo-Vz-3Uh"/>
+                            <constraint firstItem="Tig-q0-qDo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="iUk-jf-U4m"/>
                             <constraint firstItem="925-Ov-IMZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kvj-KN-EGC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="S7P-HP-bhD" secondAttribute="bottom" constant="20" id="tNE-4p-phd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="S7P-HP-bhD" secondAttribute="trailing" constant="16" id="wfn-xY-Vc5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="scoreLabel" destination="Tig-q0-qDo" id="ygq-dY-3Eb"/>
                         <outletCollection property="cardButtons" destination="JGZ-7n-ezz" collectionClass="NSMutableArray" id="lqN-OP-OCW"/>
                         <outletCollection property="cardButtons" destination="sYV-6c-OdG" collectionClass="NSMutableArray" id="Rj3-dM-aRM"/>
                         <outletCollection property="cardButtons" destination="qWq-Ee-ynO" collectionClass="NSMutableArray" id="jbf-aE-sbz"/>
@@ -364,7 +374,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-598" y="138"/>
+            <point key="canvasLocation" x="-599.20000000000005" y="137.18140929535232"/>
         </scene>
     </scenes>
 </document>

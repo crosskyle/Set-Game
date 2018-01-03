@@ -15,6 +15,21 @@ struct SetCard {
     var symbol: Symbol
     var shading: Shading
     var color: Color
+    private var identifier: Int
+    private static var identifierFactory = 0
+    
+    private static func getUniqueIdentifier() -> Int {
+        identifierFactory += 1
+        return identifierFactory
+    }
+    
+    init(number: Number, symbol: Symbol, shading: Shading, color: Color) {
+        self.number = number
+        self.symbol = symbol
+        self.shading = shading
+        self.color = color
+        self.identifier = SetCard.getUniqueIdentifier()
+    }
     
     enum Number: Int {
         case one = 1
@@ -59,7 +74,7 @@ extension SetCard: CustomStringConvertible {
 
 extension SetCard: Equatable {
     static func ==(lhs: SetCard, rhs: SetCard) -> Bool {
-        return lhs == rhs
+        return lhs.identifier == rhs.identifier
     }
 }
 

@@ -12,16 +12,16 @@ class ViewController: UIViewController {
     
     private let game = SetGame()
     
-    
     @IBOutlet var cardButtons: [UIButton]!
-    
+    @IBOutlet weak var scoreLabel: UILabel!
     @IBAction func touchDrawCardsButton(_ sender: UIButton) {
-        game.drawThreeCards()
-        updateViewFromModel()
+        if game.drawThreeCards() {
+            updateViewFromModel()
+        }
     }
     
     @IBAction func touchCard(_ sender: UIButton) {
-        if game.selectedCards.count < 3 {
+        if game.cardsSelected.count < 3 {
             sender.layer.borderWidth = 3.0
             sender.layer.borderColor = UIColor.blue.cgColor
             sender.layer.cornerRadius = 8.0
@@ -42,6 +42,9 @@ class ViewController: UIViewController {
     }
     
     func updateViewFromModel() {
+        
+        scoreLabel.text = "\(game.score)"
+        
         for index in game.cardsShown.indices {
             let card = game.cardsShown[index]
             
@@ -50,30 +53,24 @@ class ViewController: UIViewController {
                     switch card.color {
                     case .color1:
                         switch card.shading {
-                        case .open:
-                            return #colorLiteral(red: 0.5823833942, green: 0.79836303, blue: 0, alpha: 1)
-                        case .solid:
-                            return #colorLiteral(red: 0, green: 0.8044199347, blue: 0.06964756548, alpha: 1)
                         case.striped:
-                            return #colorLiteral(red: 0, green: 0.5646210909, blue: 0.4068997502, alpha: 1)
+                            return #colorLiteral(red: 0, green: 0.8044199347, blue: 0.06964756548, alpha: 1).withAlphaComponent(0.15)
+                        default:
+                            return #colorLiteral(red: 0, green: 0.8044199347, blue: 0.06964756548, alpha: 1)
                         }
                     case .color2:
                         switch card.shading {
-                        case .open:
-                            return #colorLiteral(red: 1, green: 0.2527923882, blue: 1, alpha: 1)
-                        case .solid:
-                            return #colorLiteral(red: 1, green: 0.7669824958, blue: 0.993640244, alpha: 1)
                         case.striped:
+                            return #colorLiteral(red: 0.4012519717, green: 0.2152154148, blue: 0.8767248988, alpha: 1).withAlphaComponent(0.15)
+                        default:
                             return #colorLiteral(red: 0.4012519717, green: 0.2152154148, blue: 0.8767248988, alpha: 1)
                         }
                     case .color3:
                         switch card.shading {
-                        case .open:
-                            return #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
-                        case .solid:
-                            return #colorLiteral(red: 0.6825292706, green: 0.270254612, blue: 0, alpha: 1)
                         case.striped:
-                            return #colorLiteral(red: 1, green: 0.6448701024, blue: 0.3832321465, alpha: 1)
+                            return #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1).withAlphaComponent(0.15)
+                        default:
+                            return #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
                         }
                     }
                 }
@@ -93,24 +90,38 @@ class ViewController: UIViewController {
             }
             
             var cardString = cardSymbol
-            
             for _ in 1..<card.number.rawValue {
                 cardString += cardSymbol
             }
             
+        
             let attributes: [NSAttributedStringKey: Any] = [
                 .foregroundColor: cardColor,
+                .strokeWidth: card.shading == .open ? 5.0 : -0.1
             ]
             
-            let attributedString = NSAttributedString(string: cardString,
-                attributes: attributes)
+            let attributedString = NSAttributedString(string: cardString, attributes: attributes)
             
-            cardButtons[index].isHidden = false
+            if game.cardsSelected.contains(card) {
+                cardButtons[index].layer.borderWidth = 3.0
+                cardButtons[index].layer.borderColor = UIColor.blue.cgColor
+                cardButtons[index].layer.cornerRadius = 8.0
+            }
+            else {
+                cardButtons[index].layer.borderColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.6000000238)
+            }
+            
+            cardButtons[index].backgroundColor = #colorLiteral(red: 0.9372549057, green: 0.9372549057, blue: 0.9568627477, alpha: 1)
             cardButtons[index].setAttributedTitle(attributedString, for: UIControlState.normal)
+            cardButtons[index].isEnabled = true
         }
         
         for index in game.cardsShown.count..<cardButtons.count {
-            cardButtons[index].isHidden = true
+            cardButtons[index].layer.borderColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.6000000238)
+            cardButtons[index].backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+            cardButtons[index].setTitle(nil, for: UIControlState.normal)
+            cardButtons[index].setAttributedTitle(nil, for: UIControlState.normal)
+            cardButtons[index].isEnabled = false
         }
     }
 }

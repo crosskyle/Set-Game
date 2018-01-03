@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    private let game = SetGame()
+    private var game = SetGame()
     
     @IBOutlet var cardButtons: [UIButton]!
     @IBOutlet weak var scoreLabel: UILabel!
@@ -35,6 +35,12 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBAction func touchNewGameButton(_ sender: Any) {
+        game = SetGame()
+        updateViewFromModel()
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -42,6 +48,10 @@ class ViewController: UIViewController {
     }
     
     func updateViewFromModel() {
+        
+        if game.cardCount <= 0 {
+            game = SetGame()
+        }
         
         scoreLabel.text = "\(game.score)"
         
@@ -102,18 +112,19 @@ class ViewController: UIViewController {
             
             let attributedString = NSAttributedString(string: cardString, attributes: attributes)
             
+            cardButtons[index].backgroundColor = #colorLiteral(red: 0.9372549057, green: 0.9372549057, blue: 0.9568627477, alpha: 1)
+            cardButtons[index].setAttributedTitle(attributedString, for: UIControlState.normal)
+            cardButtons[index].isEnabled = true
+            
             if game.cardsSelected.contains(card) {
                 cardButtons[index].layer.borderWidth = 3.0
                 cardButtons[index].layer.borderColor = UIColor.blue.cgColor
                 cardButtons[index].layer.cornerRadius = 8.0
+                cardButtons[index].isEnabled = false
             }
             else {
                 cardButtons[index].layer.borderColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.6000000238)
             }
-            
-            cardButtons[index].backgroundColor = #colorLiteral(red: 0.9372549057, green: 0.9372549057, blue: 0.9568627477, alpha: 1)
-            cardButtons[index].setAttributedTitle(attributedString, for: UIControlState.normal)
-            cardButtons[index].isEnabled = true
         }
         
         for index in game.cardsShown.count..<cardButtons.count {

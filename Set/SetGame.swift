@@ -9,12 +9,12 @@
 import Foundation
 
 class SetGame {
-    private var deck = SetDeck()
-    
+    private(set) var deck = SetDeck()
     private(set) var cardsShown = [SetCard]()
     private var cardsMatched = [SetCard]()
     private(set) var cardsSelected = [SetCard]()
     private(set) var score = 0
+    private(set) var cardCount = 81
     
     init() {
         for _ in 1...12 {
@@ -101,6 +101,7 @@ class SetGame {
                     
                     if let index = cardsShown.index(of: card) {
                         cardsShown.remove(at: index)
+                        cardCount -= 1
                     }
                 }
             }

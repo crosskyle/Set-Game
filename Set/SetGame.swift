@@ -9,26 +9,27 @@
 import Foundation
 
 class SetGame {
-    private(set) var deck = SetDeck()
-    private(set) var cardsShown = [SetCard]()
-    private var cardsMatched = [SetCard]()
+    private var deck = SetDeck()
+    private(set) var cardsDisplayed = [SetCard]()
     private(set) var cardsSelected = [SetCard]()
     private(set) var score = 0
     private(set) var cardCount = 81
+    let MATCH = 3
+    let MISMATCH = -5
     
     init() {
         for _ in 1...12 {
             if let card = deck.draw() {
-                cardsShown.append(card)
+                cardsDisplayed.append(card)
             }
         }
     }
     
     func drawThreeCards() -> Bool {
-        if cardsShown.count <= 21 {
+        if cardsDisplayed.count <= 21 {
             for _ in 1...3 {
                 if let card = deck.draw()  {
-                    cardsShown.append(card)
+                    cardsDisplayed.append(card)
                 }
             }
             return true
@@ -37,9 +38,8 @@ class SetGame {
     }
     
     func selectCard(at index: Int) {
-        
         if cardsSelected.count < 3 {
-            cardsSelected.append(cardsShown[index])
+            cardsSelected.append(cardsDisplayed[index])
             
             if cardsSelected.count == 3 {
                 cardsMakeSet()
@@ -47,65 +47,42 @@ class SetGame {
         }
     }
     
-    func cardsMakeSet() {
-        
-        if cardsSelected[0].color == cardsSelected[1].color && cardsSelected[0].color == cardsSelected[2].color { }
-            
-        else if cardsSelected[0].color != cardsSelected[1].color && cardsSelected[0].color != cardsSelected[2].color && cardsSelected[1].color != cardsSelected[2].color { }
-            
-        else {
-            removeFromCardsSelected(isMatched: false)
-            score -= 5
-            return
-        }
-    
-        if cardsSelected[0].number == cardsSelected[1].number && cardsSelected[0].number == cardsSelected[2].number { }
-            
-        else if cardsSelected[0].number != cardsSelected[1].number && cardsSelected[0].number != cardsSelected[2].number && cardsSelected[1].number != cardsSelected[2].number { }
-            
-        else {
-            removeFromCardsSelected(isMatched: false)
-            score -= 5
-            return
-        }
-        
-        if cardsSelected[0].shading == cardsSelected[1].shading && cardsSelected[0].shading == cardsSelected[2].shading { }
-            
-        else if cardsSelected[0].shading != cardsSelected[1].shading && cardsSelected[0].shading != cardsSelected[2].shading && cardsSelected[1].shading != cardsSelected[2].shading { }
-            
-        else {
-            removeFromCardsSelected(isMatched: false)
-            score -= 5
-            return
-        }
-        
-        if cardsSelected[0].symbol == cardsSelected[1].symbol && cardsSelected[0].symbol == cardsSelected[2].symbol { }
-            
-        else if cardsSelected[0].symbol != cardsSelected[1].symbol && cardsSelected[0].symbol != cardsSelected[2].symbol && cardsSelected[1].symbol != cardsSelected[2].symbol { }
-            
-        else {
-            removeFromCardsSelected(isMatched: false)
-            return
-        }
-        
-        removeFromCardsSelected(isMatched: true)
-        score += 2
-        
-    }
-    
-    func removeFromCardsSelected(isMatched: Bool) {
-        for _ in cardsSelected {
-            if let card = cardsSelected.popLast() {
-                if isMatched {
-                    cardsMatched.append(card)
-                    
-                    if let index = cardsShown.index(of: card) {
-                        cardsShown.remove(at: index)
-                        cardCount -= 1
-                    }
+    func cardsAreDifferent(at k: Int) -> Bool {
+        for i in 0..<cardsSelected.count-1 {
+            for j in i+1..<cardsSelected.count {
+                if cardsSelected[i].enumValues[k] == cardsSelected[j].enumValues[k] {
+                    return false
                 }
             }
         }
+        return true
     }
     
+    func cardsAreSame(at k: Int) -> Bool {
+        return cardsSelected.reduce(true, { $0 && ($1.enumValues[k] == cardsSelected[0].enumValues[k]) })
+    }
+    
+    func cardsMakeSet() {
+        for k in 0..<cardsSelected[0].enumValues.count {
+            if cardsAreDifferent(at: k) || cardsAreSame(at: k){}
+            else {
+                removeFromCardsSelectedAndCardsShownIf(isMatched: false)
+                score += MISMATCH
+                return
+            }
+        }
+        removeFromCardsSelectedAndCardsShownIf(isMatched: true)
+        score += MATCH
+    }
+    
+    func removeFromCardsSelectedAndCardsShownIf(isMatched: Bool) {
+        for _ in cardsSelected {
+            guard let card = cardsSelected.popLast() else { return }
+            
+            if isMatched, let index = cardsDisplayed.index(of: card) {
+                cardsDisplayed.remove(at: index)
+                cardCount -= 1
+            }
+        }
+    }
 }

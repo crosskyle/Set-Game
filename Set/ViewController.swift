@@ -30,7 +30,7 @@ class ViewController: UIViewController {
                 game.selectCard(at: cardNumber)
                 updateViewFromModel()
             } else {
-                print("choosen card was not in cardButtons")
+                print("chosen card was not in cardButtons")
             }
         }
     }
@@ -55,8 +55,8 @@ class ViewController: UIViewController {
         
         scoreLabel.text = "\(game.score)"
         
-        for index in game.cardsShown.indices {
-            let card = game.cardsShown[index]
+        for index in game.cardsDisplayed.indices {
+            let card = game.cardsDisplayed[index]
             
             var cardColor : UIColor {
                 get {
@@ -127,7 +127,7 @@ class ViewController: UIViewController {
             }
         }
         
-        for index in game.cardsShown.count..<cardButtons.count {
+        for index in game.cardsDisplayed.count..<cardButtons.count {
             cardButtons[index].layer.borderColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.6000000238)
             cardButtons[index].backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
             cardButtons[index].setTitle(nil, for: UIControlState.normal)

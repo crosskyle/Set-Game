@@ -11,13 +11,17 @@ import UIKit
 
 struct SetCard {
 
-    var number: Number
-    var symbol: Symbol
-    var shading: Shading
-    var color: Color
+    let number: Number
+    let symbol: Symbol
+    let shading: Shading
+    let color: Color
+    
+    var enumValues: [Int] {
+        return [number.rawValue, symbol.rawValue, shading.rawValue, color.rawValue]
+    }
+    
     private var identifier: Int
     private static var identifierFactory = 0
-    
     private static func getUniqueIdentifier() -> Int {
         identifierFactory += 1
         return identifierFactory
@@ -33,30 +37,30 @@ struct SetCard {
     
     enum Number: Int {
         case one = 1
-        case two = 2
-        case three = 3
+        case two
+        case three
         
         static var all = [Number.one,.two,.three]
     }
     
-    enum Symbol: String {
-        case symbol1
+    enum Symbol: Int {
+        case symbol1 = 1
         case symbol2
         case symbol3
         
         static var all = [Symbol.symbol1,.symbol2,.symbol3]
     }
     
-    enum Shading {
-        case solid
+    enum Shading: Int {
+        case solid = 1
         case striped
         case open
         
         static var all = [Shading.solid,.striped,.open]
     }
     
-    enum Color {
-        case color1
+    enum Color: Int {
+        case color1 = 1
         case color2
         case color3
         
@@ -68,7 +72,7 @@ struct SetCard {
 extension SetCard: CustomStringConvertible {
     
     var description: String {
-        return "\(number), \(symbol.rawValue), \(shading), \(color)"
+        return "\(number), \(symbol), \(shading), \(color)"
     }
 }
 
